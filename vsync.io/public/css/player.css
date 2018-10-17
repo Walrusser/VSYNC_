@@ -1,0 +1,94 @@
+body {
+    background-color: #202020;
+    font-family:  Roboto;
+}
+
+#logo{
+    height: 64px;
+    padding: 4px;
+}
+
+#roomID{
+    font-weight: 100;
+    font-size: 15pt;
+    font-style: italic;
+    color: #ffffff;
+
+    position: absolute; left: 50%; top: 45px;
+    transform: translate(-50%, -50%);
+}
+
+hr{
+    background-color: #303030;
+    border-color: #303030;
+}
+
+#player{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 68%;
+    margin-top: 20px;
+    height: calc((9vh/16)*100*1.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.your-centered-div {
+    width: 68%;
+    height: calc((9vh/16)*100*1.3);
+
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    margin: auto;
+}
+
+#addRow{
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width: 68%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#inputBar{
+    margin: 10px;
+    width: 30%;
+}
+
+#addRowChild{
+    margin-left: 7px;
+}
+
+.ghost-button{
+    display: inline-block;
+    width: 200px;
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    color: #34515e;
+    border: 1px solid #607d8b;
+    font-weight: 300;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: background-color 0.1s ease-out,
+    color 0.1s ease-out;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+    background-color: #8eacbb;
+    color: #383838;
+    transition: background-color 0.2s ease-in,
+    color 0.2s ease-in;
+}
+
+li {
+    padding: 5px;
+}
+
+ul {
+    list-style:none;
+    padding-left:0;
+}​

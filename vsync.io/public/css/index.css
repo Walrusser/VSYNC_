@@ -1,0 +1,78 @@
+body {
+    background-color: #202020;
+    font-family:  "Swis721 Cn BT";
+}
+
+footer{
+    color: #ffffff;
+    font-size: 2px;
+}
+
+.logo{
+    height: 64px;
+    padding: 4px;
+}
+
+hr{
+    background-color: #303030;
+    border-color: #303030;
+}
+
+.bigtext p{
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 0em;
+    font-size: 130px;
+    padding-left: 25%;
+}
+
+.toprow a {
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 0em;
+    font-size: 18px;
+    padding: 5px;
+    text-decoration: none;
+    float: left;
+    text-align: center;
+  }
+
+.toprow a.active {
+    text-decoration: underline;
+  }
+
+.header-right {
+    float: right;
+  }
+
+.link_buttons{
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 0em;
+    font-size: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-decoration: none;
+}
+
+.ghost-button{
+    display: block;
+    width: 200px;
+    padding: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1pt solid #ffffff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: background-color 0.1s ease-out,
+    color 0.1s ease-out;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+    background-color: #ffffff;
+    color: #202020;
+    transition: background-color 0.2s ease-in,
+    color 0.2s ease-in;
+}
