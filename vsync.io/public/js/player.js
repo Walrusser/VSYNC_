@@ -47,7 +47,7 @@ function onPlayerReady(event) {
 }
 
 function makeEventSourceConnection(){
-    eventSource = new EventSource("http://localhost:3000/player.html/sync/" + roomID + "/");
+    eventSource = new EventSource("https://vsync.io/player.html/sync/" + roomID + "/");
 
     eventSource.onmessage = function(event){
         console.log(event.data);
@@ -59,31 +59,60 @@ function makeEventSourceConnection(){
             player.pauseVideo();
             videoID = sync[0];
             //And then set status
+
+            if(sync[1] != status){
+                if(sync[1] == 1){
+
+                    if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
+                        player.seekTo(sync[2]);
+                    }
+
+                    player.playVideo();
+
+                }
+                else if(sync[1] == 2){
+                    if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
+                        player.seekTo(sync[2]);
+                    }
+
+                    player.pauseVideo();
+                }
+                else if(sync[1] == 0){
+                    if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
+                        player.seekTo(sync[2]);
+                    }
+                    
+                    player.stopVideo();
+                }
+            }
+
+        } else{
+            if(sync[1] != status){
+                if(sync[1] == 1){
+                    if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
+                        player.seekTo(sync[2]);
+                    }
+
+                    player.playVideo();
+                }
+                else if(sync[1] == 2){
+                    if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
+                        player.seekTo(sync[2]);
+                    }
+
+                    player.pauseVideo();
+                }
+                else if(sync[1] == 0){
+                    if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
+                        player.seekTo(sync[2]);
+                    }
+
+                    player.stopVideo();
+                }
+            }
         }
 
-        if(sync[1] != status){
-            if(sync[1] == 1){
-                player.playVideo();
 
-                if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
-                    player.seekTo(sync[2]);
-                }
-            }
-            else if(sync[1] == 2){
-                player.pauseVideo();
-
-                if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
-                    player.seekTo(sync[2]);
-                }
-            }
-            else if(sync[1] == 0){
-                player.stopVideo();
-
-                if(sync[2] - player.getCurrentTime() > 5 || sync[2] - player.getCurrentTime() < 5){
-                    player.seekTo(sync[2]);
-                }
-            }
-        }
     };
 }
 
@@ -93,7 +122,7 @@ function onPlayerStateChange(event) {
         time = player.getCurrentTime();
 
         var data = "?video=" + video_id + "&status=" + status + "&time=" + time;
-        xhttp.open("POST", "http://localhost:3000/player.html/sync/" + roomID + data, true);
+        xhttp.open("POST", "https://vsync.io/player.html/sync/" + roomID + data, true);
         xhttp.send();
     }
     else if (event.data == YT.PlayerState.PAUSED){
@@ -101,7 +130,7 @@ function onPlayerStateChange(event) {
         time = player.getCurrentTime();
 
         var data = "?video=" + video_id + "&status=" + status + "&time=" + time;
-        xhttp.open("POST", "http://localhost:3000/player.html/sync/" + roomID + data, true);
+        xhttp.open("POST", "https://vsync.io/player.html/sync/" + roomID + data, true);
         xhttp.send();
     }
 
@@ -110,7 +139,7 @@ function onPlayerStateChange(event) {
         time = player.getCurrentTime();
 
         var data = "?video=" + video_id + "&status=" + status + "&time=" + time;
-        xhttp.open("POST", "http://localhost:3000/player.html/sync/" + roomID + data, true);
+        xhttp.open("POST", "https://vsync.io/player.html/sync/" + roomID + data, true);
         xhttp.send();
     }
 
@@ -164,7 +193,7 @@ function onClickPlay() {
     time = 0;
 
     var data = "?video=" + video_id + "&status=" + status + "&time=" + time;
-    xhttp.open("POST", "http://localhost:3000/player.html/sync/" + roomID + data, true);
+    xhttp.open("POST", "https://vsync.io/player.html/sync/" + roomID + data, true);
     xhttp.send();
 
 }

@@ -33,5 +33,5 @@ app.post("/player.html/sync/:roomId", (req, res) => {
 
 });
 
-app.listen(8080);
-console.log("listening on port 8080");
+app.listen(42070);
+console.log("listening on port 42070");
