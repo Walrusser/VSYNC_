@@ -19,6 +19,7 @@ if(params[1] != null){
 } 
 
 var videoID;
+var video_id;
 var nextKey;
 var nextVideoID;
 var time;
@@ -58,6 +59,7 @@ function makeEventSourceConnection(){
             player.loadVideoById(sync[0], sync[2], "large");
             player.pauseVideo();
             videoID = sync[0];
+            video_id = sync[0];
             //And then set status
 
             if(sync[1] != status){
